@@ -1,0 +1,18 @@
+<template name="note">
+  <div class="note">
+    {{# afDeleteButton collection="Notes" doc=selectedNote}}
+    <span class="fa fa-trash-o"></span>
+    {{/afDeleteButton}}
+    <hr>
+    <div class="topNote">
+      <h1>{{title}}</h1>
+      <p>{{#markdown}}{{content}}{{/markdown}}</p>
+    </div>
+    <hr>
+    <ul class="tags bottomNote">
+      {{#each tags}}
+        <li class="tag"><a href="{{pathFor 'tag' tag=this}}">{{this}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

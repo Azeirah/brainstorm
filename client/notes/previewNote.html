@@ -1,0 +1,18 @@
+<template name="previewNote">
+{{#if content}}
+<div class="note preview">
+    <h2 class="previewTitle">Preview</h2>
+    <hr>
+    <div class="topNote">
+        <h1>{{title}}</h1>
+        {{#markdown}}{{content}}{{/markdown}}
+    </div>
+    <hr>
+    <ul class="tags bottomNote">
+        {{#each tags}}
+        <li class="tag"><a>{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+</template>

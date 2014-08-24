@@ -1,0 +1,90 @@
+@import '../styles/variables';
+
+.notes {
+    -moz-column-count: 4;
+    -moz-column-gap: 16px;
+    -moz-column-fill: balanced;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 16px;
+    column-count: 4;
+    column-gap: 16px;
+    width: 99%;
+
+    .note {
+        margin: 8px;
+        display: inline-block;
+        width: 100%;
+        background-color: white;
+        text-align: left;
+        border: 1px solid gray;
+        box-shadow: 1px 1px 3px gray;
+        border-radius: 2px;
+
+        .previewTitle {
+            color: @secondary-color;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        input {
+            max-width: 95%;
+        }
+
+        .topNote > h1 {
+            text-align: center;
+        }
+
+        p {
+            max-height: 400px;
+            overflow: auto;
+            margin: 12px;
+        }
+
+        p {
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: bold;
+            }
+
+            code {
+                background-color: rgb(240, 240, 240);
+            }
+        }
+
+        .tags {
+            text-align: left;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: @secondary-color;
+            border-radius: 5px;
+            border: 1px solid @secondary-color-complementary;
+            color: white;
+            padding: 4px;
+            margin-bottom: 4px;
+            a {
+                font-weight: bold;
+                color: white;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .newNote {
+        padding-top: 10px;
+        text-align: center;
+        textarea {
+            width: 80%;
+            height: 250px;
+        }
+    }
+
+    #newNote input {
+        height: 28px;
+    }
+
+    .tags {
+        list-style-type: none;
+    }
+}
+

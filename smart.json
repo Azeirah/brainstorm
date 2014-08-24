@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "collection-hooks": {},
+    "iron-router": {},
+    "marked": {},
+    "autoform": {},
+    "font-awesome": {},
+    "fast-render": {}
+  }
+}
