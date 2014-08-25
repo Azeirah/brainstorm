@@ -1,12 +1,34 @@
 @import '../styles/variables';
 
 .notes {
-    -moz-column-count: 4;
     -moz-column-gap: 16px;
     -moz-column-fill: balanced;
-    -webkit-column-count: 4;
     -webkit-column-gap: 16px;
-    column-count: 4;
+    @media (min-width: 368px) {
+        column-count: 1;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+    }
+    @media (min-width: 768px) {
+        column-count: 2;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+    }
+    @media (min-width: 1024px) {
+        column-count: 3;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+    }
+    @media (min-width: 1440px) {
+        column-count: 4;
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+    }
+    @media (min-width: 1920px) {
+        column-count: 5;
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+    }
     column-gap: 16px;
     width: 99%;
 

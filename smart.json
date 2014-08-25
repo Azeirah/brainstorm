@@ -1,11 +1,9 @@
 {
   "packages": {
-    "collection-hooks": {},
-    "iron-router": {},
-    "marked": {},
+    "iron-router": {
+      "version": "0.8.2"
+    },
     "autoform": {},
-    "font-awesome": {},
-    "fast-render": {}
+    "marked": {}
   }
 }
-
