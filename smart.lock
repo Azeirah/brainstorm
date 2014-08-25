@@ -6,7 +6,8 @@
         "version": "0.8.2"
       },
       "autoform": {},
-      "marked": {}
+      "marked": {},
+      "font-awesome": {}
     },
     "packages": {
       "iron-router": {
@@ -23,6 +24,11 @@
         "git": "https://github.com/chuangbo/meteor-marked.git",
         "tag": "v0.3.3",
         "commit": "a0966771f9108835755368d0879429675d7e0db4"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

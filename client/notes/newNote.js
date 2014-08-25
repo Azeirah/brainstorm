@@ -67,6 +67,9 @@ var cleanupSubmit = function(t) {
     $(tags).removeClass('required');
     $(content).removeClass('required');
     title.value = tags.value = content.value = '';
+    Session.set("content", "");
+    Session.set("title", "");
+    Session.set("tags", "");
     updatePreviewNote();
 };
 

@@ -4,6 +4,7 @@
       "version": "0.8.2"
     },
     "autoform": {},
-    "marked": {}
+    "marked": {},
+    "font-awesome": {}
   }
 }
