@@ -42,6 +42,13 @@
         box-shadow: 1px 1px 3px gray;
         border-radius: 2px;
 
+        &.preview {
+            // background-color: rgb(243, 243, 243);
+            border-width: 1px;
+            border-color: @secondary-color;
+            box-shadow: 0 0 5px @secondary-color inset;
+        }
+
         .previewTitle {
             color: @secondary-color;
             font-weight: bold;
@@ -52,7 +59,14 @@
             max-width: 95%;
         }
 
-        .topNote > h1 {
+        .topNote {
+            padding: 2px 0 0 2px;
+            button {
+                display: inline-block;
+            }
+        }
+
+        .middleNote > h1 {
             text-align: center;
         }
 

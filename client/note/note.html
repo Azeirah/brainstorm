@@ -1,10 +1,12 @@
 <template name="note">
+  {{#unless updatingNote}}
   <div class="note">
-    {{# afDeleteButton collection="Notes" doc=selectedNote}}
-    <span class="fa fa-trash-o"></span>
-    {{/afDeleteButton}}
-    <hr>
     <div class="topNote">
+      <button class="deleteNote"><span class="fa fa-trash-o"></span></button>
+      <button class="editNote">edit</button>
+    </div>
+    <hr>
+    <div class="middleNote">
       <h1>{{title}}</h1>
       <p>{{#markdown}}{{content}}{{/markdown}}</p>
     </div>
@@ -15,4 +17,5 @@
       {{/each}}
     </ul>
   </div>
+  {{/unless}}
 </template>

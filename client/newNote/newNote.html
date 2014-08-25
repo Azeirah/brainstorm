@@ -1,13 +1,18 @@
 <template name="newNote">
-    <div class="newNote note">
+    <div class="newNote note {{notify}}">
       <label for="note-title">title: </label>
-      <input type="text" id="note-title" name="Title" placeholder="My future">
+      <input type="text" id="note-title" name="Title" placeholder="My future" value="{{session 'title'}}">
       <br />
       <label for='note-tags'>tags: </label>
-      <input type="text" id="note-tags" name="tags" placeholder="dreams, later, space">
+      <input type="text" id="note-tags" name="tags" placeholder="dreams, later, space" value="{{session 'tags'}}">
       <br />
-      <textarea name="content" id="note-content" placeholder="When I'm older I want to be an Astronaut ..." ></textarea>
+      <textarea name="content" id="note-content" placeholder="When I'm older I want to be an Astronaut ..." value="{{session 'content'}}"></textarea>
       <br>
+      {{#if newNoteMode}}
       <button class="btn btn-default" id="newNoteBtn">New note :)</button>
+      {{/if}}
+      {{#if updateNoteMode}}
+      <button class="btn btn-default" id="updateNoteBtn">Update note</button>
+      {{/if}}
     </div>
 </template>

@@ -70,7 +70,18 @@ var cleanupSubmit = function(t) {
     Session.set("content", "");
     Session.set("title", "");
     Session.set("tags", "");
+    Session.set("editingNote", "");
     updatePreviewNote();
+};
+
+var submitTags = function (tags) {
+    _.each(tags, function(tag) {
+        if (!Tags.findOne({
+            name: tag
+        })) Tags.insert({
+            name: tag
+        });
+    });
 };
 
 Template.newNote.rendered = updatePreviewNote();
@@ -80,15 +91,19 @@ Template.newNote.events({
         var note = createNoteObject(t);
         inputValidationFeedback(t);
         if (validateNote(note)) {
-            // insert tags into the db if they don't exist yet
-            _.each(note.tags, function(tag) {
-                if (!Tags.findOne({
-                    name: tag
-                })) Tags.insert({
-                    name: tag
-                });
-            });
+            console.log(note);
+            submitTags(note);
             Notes.insert(note);
+            cleanupSubmit(t);
+        }
+    },
+    'click #updateNoteBtn': function (event, t) {
+        var note = createNoteObject(t);
+        inputValidationFeedback(t);
+        if (validateNote(note)) {
+            console.log(note);
+            submitTags(note);
+            Notes.update({_id: Session.get('editingNote')}, {$set: note});
             cleanupSubmit(t);
         }
     },
@@ -96,3 +111,15 @@ Template.newNote.events({
     'keyup #note-title': updatePreviewNote(),
     'keyup #note-tags': updatePreviewNote()
 });
+
+Template.newNote.newNoteMode = function () {
+    return Session.equals('noteMode', 'new');
+};
+
+Template.newNote.updateNoteMode = function () {
+    return Session.equals('noteMode', 'update');
+};
+
+Template.newNote.notify = function () {
+    return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
+};
