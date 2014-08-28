@@ -1,3 +1,6 @@
 .meteor/local
 .meteor/meteorite
 packages
+mup.json
+settings.json
+*.sublime-workspace
