@@ -18,7 +18,7 @@ createNoteObject.note = function(title, tags, content) {
         title: title,
         tags: parseTags(tags),
         content: content
-    }
+    };
 };
 
 var validateNote = function(note) {
