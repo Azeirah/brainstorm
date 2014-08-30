@@ -14,6 +14,11 @@ Template.note.events({
         Meteor.setTimeout(function () {
             Session.set('newNoteNotify', true);
         }, 20);
+    },
+    'click .deleteNote': function (event, t) {
+        if (window.confirm("Are you sure you want to delete this note?")) {
+            Notes.remove(this._id);
+        }
     }
 });
 
