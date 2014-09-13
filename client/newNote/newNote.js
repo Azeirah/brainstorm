@@ -86,11 +86,9 @@ Template.newNote.rendered = updatePreviewNote();
 Template.newNote.events({
     'click #newNoteBtn': function(event, t) {
         var note = createNoteObject(t);
-        console.log(note);
         inputValidationFeedback(t);
         if (validateNote(note)) {
             submitTags(note.tags);
-            console.dir(note);
             Notes.insert(note);
             cleanupSubmit(t);
         }

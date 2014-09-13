@@ -1,8 +1,4 @@
 if (Meteor.isClient) {
-  Template.notes.notes = function () {
-    return Notes.find({});
-  };
-
   Template.previewNote.rendered = function () {
     previewNote = this;
   };
@@ -13,7 +9,7 @@ if (Meteor.isClient) {
   };
 
   Template.tag.tagNote = function (tag) {
-    return Notes.find({tags: tag}).fetch();
+    return Notes.find({tags: {$in: [tag]}}).fetch();
   };
 
   Meteor.subscribe('notes');
@@ -28,11 +24,11 @@ if (Meteor.isServer) {
 
   Notes.allow({
     insert: function (userId, doc) {
-      return (doc.title && doc.tags && doc.content);
+      return (doc.title && doc.tags && doc.content && doc.date_created);
     }
   });
 
   Meteor.publish('notes', function () {
-    return Notes.find({});
+    return Notes.find({}, {sort: {"date_created": -1}});
   });
 }
