@@ -10,14 +10,11 @@ var createNoteObject = function(template) {
     var tags = template.find('#note-tags').value || "";
     var content = template.find('#note-content').value || "";
 
-    return createNoteObject.note(title, tags, content);
-};
-
-createNoteObject.note = function(title, tags, content) {
     return {
-        title: title,
-        tags: parseTags(tags),
-        content: content
+        "title": title,
+        "tags": parseTags(tags),
+        "content": content,
+        "date_created": new Date().getTime()
     };
 };
 
@@ -89,10 +86,11 @@ Template.newNote.rendered = updatePreviewNote();
 Template.newNote.events({
     'click #newNoteBtn': function(event, t) {
         var note = createNoteObject(t);
+        console.log(note);
         inputValidationFeedback(t);
         if (validateNote(note)) {
-            console.log(note);
-            submitTags(note);
+            submitTags(note.tags);
+            console.dir(note);
             Notes.insert(note);
             cleanupSubmit(t);
         }
@@ -101,8 +99,7 @@ Template.newNote.events({
         var note = createNoteObject(t);
         inputValidationFeedback(t);
         if (validateNote(note)) {
-            console.log(note);
-            submitTags(note);
+            submitTags(note.tags);
             Notes.update({_id: Session.get('editingNote')}, {$set: note});
             cleanupSubmit(t);
         }

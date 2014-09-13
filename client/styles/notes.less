@@ -2,8 +2,9 @@
 
 .notes {
     -moz-column-gap: 16px;
-    -moz-column-fill: balanced;
+    -moz-column-fill: balance;
     -webkit-column-gap: 16px;
+
     @media (min-width: 368px) {
         column-count: 1;
         -moz-column-count: 1;
@@ -43,7 +44,6 @@
         border-radius: 2px;
 
         &.preview {
-            // background-color: rgb(243, 243, 243);
             border-width: 1px;
             border-color: @secondary-color;
             box-shadow: 0 0 5px @secondary-color inset;
@@ -70,19 +70,27 @@
             text-align: center;
         }
 
-        p {
+        .note-content {
             max-height: 400px;
             overflow: auto;
             margin: 12px;
-        }
 
-        p {
             h1, h2, h3, h4, h5, h6 {
                 font-weight: bold;
             }
 
             code {
                 background-color: rgb(240, 240, 240);
+            }
+
+            table {
+                border-collapse: collapse;
+                border: 1px solid gray;
+
+                th, td {
+                    border: 1px solid gray;
+                    padding: 3px;
+                }
             }
         }
 
