@@ -85,11 +85,19 @@
 
             table {
                 border-collapse: collapse;
-                border: 1px solid gray;
+                width: 93%;
 
                 th, td {
-                    border: 1px solid gray;
                     padding: 3px;
+                    border: 1px solid gray;
+                }
+
+                th {
+                    border-bottom: 2px solid gray;
+                }
+
+                tbody > tr:nth-child(even) {
+                    background-color: rgb(243, 243, 243);
                 }
             }
         }
