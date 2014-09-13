@@ -1,9 +1,11 @@
 @import '../styles/variables';
 
 .notes {
-    -moz-column-gap: 16px;
+    -moz-column-gap: 12px;
     -moz-column-fill: balance;
-    -webkit-column-gap: 16px;
+    -webkit-column-gap: 12px;
+    column-gap: 12px;
+    width: 99%;
 
     @media (min-width: 368px) {
         column-count: 1;
@@ -30,13 +32,11 @@
         -moz-column-count: 5;
         -webkit-column-count: 5;
     }
-    column-gap: 16px;
-    width: 99%;
 
     .note {
         margin: 8px;
         display: inline-block;
-        width: 100%;
+        width: 99%;
         background-color: white;
         text-align: left;
         border: 1px solid gray;
