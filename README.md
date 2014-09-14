@@ -3,7 +3,7 @@ Brainstorm
 
 Brainstorm is a WIP general purpose note-taking application.
 
-## [DEMO](brainstorm-notes.meteor.com)
+## [DEMO](http://brainstorm-notes.meteor.com)
 
 Features
 ---
