@@ -14,21 +14,3 @@ if (Meteor.isClient) {
 
   Meteor.subscribe('notes');
 }
-
-if (Meteor.isServer) {
-  Notes.deny({
-    insert: function (userId, doc) {
-      return (!doc.title || !doc.tags || !doc.content);
-    }
-  });
-
-  Notes.allow({
-    insert: function (userId, doc) {
-      return (doc.title && doc.tags && doc.content && doc.date_created);
-    }
-  });
-
-  Meteor.publish('notes', function () {
-    return Notes.find({}, {sort: {"date_created": -1}});
-  });
-}
