@@ -9,3 +9,7 @@ Template.previewNote.title = function () {
 Template.previewNote.tags = function () {
   return Session.get('tags');
 };
+
+Template.previewNote.rendered = function () {
+  previewNote = this;
+};

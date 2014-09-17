@@ -25,3 +25,8 @@ Template.note.events({
 Template.note.updatingNote = function () {
     return Session.equals('editingNote', this._id);
 };
+
+Template.note.selectedNote = function () {
+    var note = Notes.findOne({_id: Session.get('selectedNote')});
+    return note;
+};
