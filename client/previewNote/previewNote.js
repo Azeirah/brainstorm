@@ -17,8 +17,8 @@ Template.previewNote.rendered = function () {
             for (var i = 0; i < codes.length; i++) {
                 hljs.highlightBlock(codes[i]);
             }
-        }, 300);
-    Deps.autorun(function () {
+        }, 400);
+    Tracker.autorun(function () {
         Session.get("content");
         rerenderHLJS();
     });
