@@ -3,8 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": ".",
-            "folder_exclude_patterns": ["packages", ".meteor"]
+			"path": "/home/mb/Documents/web/meteor/meteor-applications/brainstorm-clone"
 		}
 	]
 }

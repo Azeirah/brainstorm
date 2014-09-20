@@ -68,7 +68,7 @@ var cleanupSubmit = function(t) {
     Session.set("title", "");
     Session.set("tags", "");
     Session.set("editingNote", "");
-    updatePreviewNote();
+    updatePreviewNote()(null, t);
 };
 
 var submitTags = function (tags) {

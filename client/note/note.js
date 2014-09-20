@@ -30,3 +30,10 @@ Template.note.selectedNote = function () {
     var note = Notes.findOne({_id: Session.get('selectedNote')});
     return note;
 };
+
+Template.note.rendered = function () {
+    var codes = this.findAll("pre>code");
+    for (var i = 0; i < codes.length; i++) {
+        hljs.highlightBlock(codes[i]);
+    }
+};
