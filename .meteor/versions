@@ -8,6 +8,7 @@ blaze@2.0.0
 boilerplate-generator@1.0.0
 callback-hook@1.0.0
 check@1.0.0
+chuangbo:marked@0.3.5
 collection2@0.0.0
 ctl-helper@1.0.3
 ctl@1.0.1
@@ -48,7 +49,6 @@ reload@1.1.0
 retry@1.0.0
 routepolicy@1.0.1
 session@1.0.1
-showdown@1.0.1
 simple-schema@0.0.0
 spacebars-compiler@1.0.2
 spacebars@1.0.1

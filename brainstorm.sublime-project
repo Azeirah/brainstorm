@@ -3,7 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "/home/mb/Documents/web/meteor/meteor-applications/brainstorm-clone"
+			"path": "."
 		}
 	]
 }
