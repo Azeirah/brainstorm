@@ -1,4 +1,5 @@
-@import '../styles/variables';
+@import 'variables.less';
+@import 'note.less';
 
 .notes {
     -moz-column-gap: 12px;
@@ -34,88 +35,7 @@
     }
 
     .note {
-        margin: 8px;
-        display: inline-block;
-        width: 99%;
-        background-color: white;
-        text-align: left;
-        border: 1px solid gray;
-        box-shadow: 1px 1px 3px gray;
-        border-radius: 2px;
-
-        &.preview {
-            border-width: 1px;
-            border-color: @secondary-color;
-            box-shadow: 0 0 5px @secondary-color inset;
-        }
-
-        .previewTitle {
-            color: @secondary-color;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        input {
-            max-width: 95%;
-        }
-
-        .topNote {
-            padding: 2px 0 0 2px;
-            button {
-                display: inline-block;
-            }
-        }
-
-        .middleNote > h1 {
-            text-align: center;
-        }
-
-        .note-content {
-            max-height: 400px;
-            overflow: auto;
-            margin: 12px;
-
-            h1, h2, h3, h4, h5, h6 {
-                font-weight: bold;
-            }
-
-            table {
-                border-collapse: collapse;
-                width: 93%;
-
-                th, td {
-                    padding: 3px;
-                    border: 1px solid gray;
-                }
-
-                th {
-                    border-bottom: 2px solid gray;
-                }
-
-                tbody > tr:nth-child(even) {
-                    background-color: rgb(243, 243, 243);
-                }
-            }
-        }
-
-        .tags {
-            text-align: left;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: @secondary-color;
-            border-radius: 5px;
-            border: 1px solid @secondary-color-complementary;
-            color: white;
-            padding: 4px;
-            margin-bottom: 4px;
-            a {
-                font-weight: bold;
-                color: white;
-                font-size: 14px;
-            }
-        }
+        .note(400px);
     }
 
     .newNote {
@@ -136,3 +56,17 @@
     }
 }
 
+.shareNote {
+    -moz-column-gap: 12px;
+    -moz-column-fill: balance;
+    -webkit-column-gap: 12px;
+    column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-gap: 12px;
+    width: 99%;
+
+    .note {
+        .note(100%);
+    }
+}

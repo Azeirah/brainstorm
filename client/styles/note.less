@@ -1,0 +1,97 @@
+@import 'variables.less';
+
+.note(@note-height) {
+    margin: 8px;
+    display: inline-block;
+    width: 99%;
+    background-color: white;
+    text-align: left;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 2px;
+
+    &.preview {
+        border-width: 1px;
+        border-color: @secondary-color;
+        box-shadow: 0 0 5px @secondary-color inset;
+    }
+
+    .previewTitle {
+        color: @secondary-color;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    input {
+        max-width: 95%;
+    }
+
+    .topNote {
+        padding: 2px 0 0 2px;
+        button {
+            display: inline-block;
+        }
+    }
+
+    .middleNote .title {
+        text-align: center;
+        a {
+            color: @heading-color;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .middleNote .previewNoteTitle {
+        text-align: center;
+    }
+
+    .note-content {
+        max-height: @note-height;
+        overflow: auto;
+        margin: 12px;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+            max-width: 98%;
+
+            th, td {
+                padding: 3px;
+                border: 1px solid gray;
+            }
+
+            th {
+                border-bottom: 2px solid gray;
+            }
+
+            tbody > tr:nth-child(even) {
+                background-color: rgb(243, 243, 243);
+            }
+        }
+    }
+
+    .tags {
+        text-align: left;
+    }
+
+    .tag {
+        display: inline-block;
+        background-color: @secondary-color;
+        border-radius: 5px;
+        border: 1px solid @secondary-color-complementary;
+        color: white;
+        padding: 4px;
+        margin-bottom: 4px;
+        a {
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+    }
+}

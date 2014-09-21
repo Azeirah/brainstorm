@@ -15,4 +15,15 @@ Router.map(function () {
             };
         }
     });
+
+    this.route('note', {
+        path: '/note/:_id',
+        template: 'note',
+        layoutTemplate: 'shareNote',
+        data: function () {
+            return {
+                id: this.params._id
+            }
+        }
+    });
 });

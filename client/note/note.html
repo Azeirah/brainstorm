@@ -1,13 +1,15 @@
 <template name="note">
   {{#unless updatingNote}}
   <div class="note">
+    {{#unless share}}
     <div class="topNote">
       <button class="deleteNote"><span class="fa fa-trash-o"></span></button>
       <button class="editNote">edit</button>
     </div>
     <hr>
+    {{/unless}}
     <div class="middleNote">
-      <h1>{{title}}</h1>
+      <h1 class="title"><a href="/note/{{_id}}">{{title}}</a></h1>
       <p class="note-content">{{#markdown}}{{content}}{{/markdown}}</p>
     </div>
     <hr>
