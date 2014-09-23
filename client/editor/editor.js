@@ -1,5 +1,5 @@
 var parseTags = function(tagsString) {
-    var split = tagsString.replace(/ /g, '').toLowerCase().split(',');
+    var split = tagsString.toLowerCase().split(',');
     return split.filter(function(val) {
         return val.length > 1;
     });
