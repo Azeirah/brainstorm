@@ -1,12 +1,12 @@
 <template name="editor">
     <div class="editor note {{notify}}">
       <label for="note-title">title: </label>
-      <input type="text" id="note-title" name="Title" placeholder="My future" value="{{session 'title'}}">
+      <input type="text" id="note-title" name="Title" placeholder="My future" value="">
       <br />
       <label for='note-tags'>tags: </label>
-      <input type="text" id="note-tags" name="tags" placeholder="dreams, later, space" value="{{session 'tags'}}">
+      <input type="text" id="note-tags" name="tags" placeholder="dreams, later, space" value="">
       <br />
-      <textarea name="content" id="note-content" placeholder="When I'm older I want to be an Astronaut ..." value="{{session 'content'}}"></textarea>
+      <textarea name="content" id="note-content" placeholder="When I'm older I want to be an Astronaut ..." value=""></textarea>
       <br>
       {{#if newNoteMode}}
       <button class="btn btn-default" id="newNoteBtn">New note :)</button>

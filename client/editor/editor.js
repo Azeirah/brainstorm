@@ -24,14 +24,14 @@ var validateNote = function(note) {
 
 var updatePreviewNote = function() {
     var that = this;
-    return function(event, t) {
+    return _.debounce(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
         for (var what in note) {
             Session.set(what, note[what]);
         }
         Session.set(what, note[what]);
-    };
+    }, 150);
 };
 
 var inputValidationFeedback = function(t) {
@@ -82,7 +82,14 @@ var submitTags = function (tags) {
 };
 
 Template.editor.rendered = function () {
-
+    var that = this;
+    this.autorun(function () {
+        if (Session.get('editingNote')) {
+            that.find('#note-tags')   .value = Session.get('tags');
+            that.find('#note-content').value = Session.get('content');
+            that.find('#note-title')  .value = Session.get('title');
+        }
+    });
 };
 
 Template.editor.events({
