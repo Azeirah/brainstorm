@@ -11,14 +11,25 @@ Features
 * Note taking
   * Live preview of what you're writing
   * Partially supports Github Flavored markdown (no todo's yet)
-  * Syntax highlighting for all languages highlight.js supports***** ([see support here](https://highlightjs.org/static/test.html))
+  * Syntax highlighting for all languages highlight.js supports ([see support here](https://highlightjs.org/static/test.html))
 * Editing notes
 * Deleting notes
 * Grid-based note viewing
 * Isolating groups of notes by tag-name
 * Works on different screen sizes
+* Sharing separate notes
 
-\* Currently not in the demo :(
+Currently working on:
+---
+
+Most importantly is, when going public with this application, that notes can be secured. In the coming time, I'll be working on note-security.
+
+There'll be a developer blog post (using brainstorm of course), with more details on the subject later.
+
+Issues that need fixing:
+---
+
+Right now, there are no critical issues. If you find anything, please open up an issue.
 
 Todo features
 ---
