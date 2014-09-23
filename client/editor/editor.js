@@ -81,7 +81,9 @@ var submitTags = function (tags) {
     });
 };
 
-Template.editor.rendered = updatePreviewNote();
+Template.editor.rendered = function () {
+
+};
 
 Template.editor.events({
     'click #newNoteBtn': function(event, t) {
