@@ -1,3 +1,4 @@
+accounts-base@1.1.0
 application-configuration@1.0.2
 autopublish@1.0.0
 autoupdate@1.1.0
@@ -31,9 +32,11 @@ jquery@1.0.0
 json@1.0.0
 less@1.0.8
 livedata@1.0.9
+localstorage@1.0.0
 logging@1.0.3
 meteor-platform@1.1.0
 meteor@1.1.0
+meteorhacks:fast-render@1.1.0
 minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
@@ -48,6 +51,7 @@ reactive-var@1.0.1
 reload@1.1.0
 retry@1.0.0
 routepolicy@1.0.1
+service-configuration@1.0.1
 session@1.0.1
 simple-schema@0.0.0
 spacebars-compiler@1.0.2
