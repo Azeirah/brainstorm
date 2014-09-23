@@ -81,9 +81,9 @@ var submitTags = function (tags) {
     });
 };
 
-Template.newNote.rendered = updatePreviewNote();
+Template.editor.rendered = updatePreviewNote();
 
-Template.newNote.events({
+Template.editor.events({
     'click #newNoteBtn': function(event, t) {
         var note = createNoteObject(t);
         inputValidationFeedback(t);
@@ -107,14 +107,14 @@ Template.newNote.events({
     'keyup #note-tags': updatePreviewNote()
 });
 
-Template.newNote.newNoteMode = function () {
+Template.editor.newNoteMode = function () {
     return Session.equals('noteMode', 'new');
 };
 
-Template.newNote.updateNoteMode = function () {
+Template.editor.updateNoteMode = function () {
     return Session.equals('noteMode', 'update');
 };
 
-Template.newNote.notify = function () {
+Template.editor.notify = function () {
     return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
 };
