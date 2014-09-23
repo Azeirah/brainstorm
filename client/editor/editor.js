@@ -31,7 +31,7 @@ var updatePreviewNote = function() {
             Session.set(what, note[what]);
         }
         Session.set(what, note[what]);
-    }, 150);
+    }, 350);
 };
 
 var inputValidationFeedback = function(t) {
