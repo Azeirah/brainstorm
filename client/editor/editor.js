@@ -27,10 +27,11 @@ var updatePreviewNote = function() {
     return _.debounce(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
-        for (var what in note) {
+        Object.keys(object).forEach(function (what) {
             Session.set(what, note[what]);
-        }
+        });
         Session.set(what, note[what]);
+        Session.set("previewNoteUpdated", Math.random());
     }, 350);
 };
 
@@ -113,7 +114,8 @@ Template.editor.events({
     },
     'keyup textarea': updatePreviewNote(),
     'keyup #note-title': updatePreviewNote(),
-    'keyup #note-tags': updatePreviewNote()
+    'keyup #note-tags': updatePreviewNote(),
+
 });
 
 Template.editor.newNoteMode = function () {

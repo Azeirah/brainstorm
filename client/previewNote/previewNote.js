@@ -11,16 +11,19 @@ Template.previewNote.tags = function () {
 };
 
 Template.previewNote.rendered = function () {
-    previewNote = this;
+    var that = this;
     var rerenderHLJS = function () {
-        var codes = previewNote.findAll("pre>code");
+        var codes = that.findAll("pre>code");
         for (var i = 0; i < codes.length; i++) {
             hljs.highlightBlock(codes[i]);
         }
     };
     Tracker.autorun(function () {
+        Session.get("previewNoteUpdated");
+        Tracker.afterFlush(function () {
+            rerenderHLJS();
+        });
         // rerun syntax highlighting after the debounced text input
-        Session.get("content");
-        rerenderHLJS();
     });
 };
+
