@@ -27,6 +27,5 @@ Template.note.updatingNote = function () {
 };
 
 Template.note.selectedNote = function () {
-    var note = Notes.findOne({_id: Session.get('selectedNote')});
-    return note;
+    return Notes.findOne({_id: Session.get('selectedNote')});
 };

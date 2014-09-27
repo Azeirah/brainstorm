@@ -27,7 +27,7 @@ var updatePreviewNote = function() {
     return _.debounce(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
-        Object.keys(note).forEach(function (what) {
+        Object.keys(note).forEach(function(what) {
             Session.set(what, note[what]);
         });
         Session.set("previewNoteUpdated", Math.random());
@@ -35,43 +35,39 @@ var updatePreviewNote = function() {
 };
 
 var inputValidationFeedback = function(t) {
-    var title = t.find('#note-title');
-    var tags = t.find('#note-tags');
-    var content = t.find('#note-content');
-
-    if (!title.value) {
-        $(title).addClass('required');
-    } else {
-        $(title).removeClass('required');
-    }
-    if (!tags.value) {
-        $(tags).addClass('required');
-    } else {
-        $(tags).removeClass('required');
-    }
-    if (!content.value) {
-        $(content).addClass('required');
-    } else {
-        $(content).removeClass('required');
-    }
+    var validateNode = function(node) {
+        if (!node.value) {
+            $(node).addClass('required');
+        } else {
+            $(node).removeClass('required');
+        }
+    };
+    [t.find('#note-title'), t.find('#note-tags'), t.find('#note-content')].forEach(validateNode);
 };
 
 var cleanupSubmit = function(t) {
-    var title = t.find('#note-title');
-    var tags = t.find('#note-tags');
-    var content = t.find('#note-content');
-    $(title).removeClass('required');
-    $(tags).removeClass('required');
-    $(content).removeClass('required');
-    title.value = tags.value = content.value = '';
-    Session.set("content", "");
-    Session.set("title", "");
-    Session.set("tags", "");
-    Session.set("editingNote", "");
-    updatePreviewNote()(null, t);
+    var clean = function (node) {
+        $(node).removeClass('required');
+        node.value = '';
+    };
+
+    [
+        t.find('#note-title'),
+        t.find('#note-tags'),
+        t.find('#note-content')
+    ].forEach(clean);
+
+    [
+        "content",
+        "title",
+        "tags",
+        "editingNote"
+    ].forEach(function (key) {
+        Session.set(key, "");
+    });
 };
 
-var submitTags = function (tags) {
+var submitTags = function(tags) {
     _.each(tags, function(tag) {
         if (!Tags.findOne({
             name: tag
@@ -81,13 +77,13 @@ var submitTags = function (tags) {
     });
 };
 
-Template.editor.rendered = function () {
+Template.editor.rendered = function() {
     var that = this;
-    this.autorun(function () {
+    this.autorun(function() {
         if (Session.get('editingNote')) {
-            that.find('#note-tags')   .value = Session.get('tags');
+            that.find('#note-tags').value = Session.get('tags');
             that.find('#note-content').value = Session.get('content');
-            that.find('#note-title')  .value = Session.get('title');
+            that.find('#note-title').value = Session.get('title');
         }
     });
 };
@@ -102,29 +98,32 @@ Template.editor.events({
             cleanupSubmit(t);
         }
     },
-    'click #updateNoteBtn': function (event, t) {
+    'click #updateNoteBtn': function(event, t) {
         var note = createNoteObject(t);
         inputValidationFeedback(t);
         if (validateNote(note)) {
             submitTags(note.tags);
-            Notes.update({_id: Session.get('editingNote')}, {$set: note});
+            Notes.update({
+                _id: Session.get('editingNote')
+            }, {
+                $set: note
+            });
             cleanupSubmit(t);
         }
     },
     'keyup textarea': updatePreviewNote(),
     'keyup #note-title': updatePreviewNote(),
     'keyup #note-tags': updatePreviewNote(),
-
 });
 
-Template.editor.newNoteMode = function () {
+Template.editor.newNoteMode = function() {
     return Session.equals('noteMode', 'new');
 };
 
-Template.editor.updateNoteMode = function () {
+Template.editor.updateNoteMode = function() {
     return Session.equals('noteMode', 'update');
 };
 
-Template.editor.notify = function () {
+Template.editor.notify = function() {
     return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
 };
