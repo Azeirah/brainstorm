@@ -2,6 +2,7 @@ accounts-base@1.1.0
 application-configuration@1.0.2
 autopublish@1.0.0
 autoupdate@1.1.0
+azeirah:marked@0.4.0
 base64@1.0.0
 binary-heap@1.0.0
 blaze-tools@1.0.0
@@ -9,7 +10,6 @@ blaze@2.0.0
 boilerplate-generator@1.0.0
 callback-hook@1.0.0
 check@1.0.0
-chuangbo:marked@0.3.5
 collection2@0.0.0
 ctl-helper@1.0.3
 ctl@1.0.1

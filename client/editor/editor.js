@@ -27,10 +27,9 @@ var updatePreviewNote = function() {
     return _.debounce(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
-        Object.keys(object).forEach(function (what) {
+        Object.keys(note).forEach(function (what) {
             Session.set(what, note[what]);
         });
-        Session.set(what, note[what]);
         Session.set("previewNoteUpdated", Math.random());
     }, 350);
 };

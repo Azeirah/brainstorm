@@ -2,10 +2,21 @@
 	"folders":
 	[
 		{
+			"file_exclude_patterns":
+			[
+				"LICENSE",
+				".gitignore",
+				"mup.json",
+				"settings.json"
+			],
+			"folder_exclude_patterns":
+			[
+				".meteor",
+				"packages",
+				"lib"
+			],
 			"follow_symlinks": true,
-			"path": ".",
-            "folder_exclude_patterns": [".meteor", "packages", "lib"],
-            "file_exclude_patterns": ["LICENSE", ".gitignore", "mup.json", "settings.json"]
+			"path": "."
 		}
 	]
 }
