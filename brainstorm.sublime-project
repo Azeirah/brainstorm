@@ -16,7 +16,7 @@
 				"lib"
 			],
 			"follow_symlinks": true,
-			"path": "."
+			"path": "./"
 		}
 	]
 }
