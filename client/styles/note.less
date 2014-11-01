@@ -74,6 +74,19 @@
                 background-color: rgb(243, 243, 243);
             }
         }
+
+        blockquote {
+            margin: 0;
+            p {
+                background-color: #eee;
+                &:before {
+                    display: inline;
+                    font-size: 48px;
+                    content: "\"";
+                    font-style: italic;
+                }
+            }
+        }
     }
 
     .tags {
