@@ -77,14 +77,19 @@
 
         blockquote {
             margin: 0;
+            padding-left: 5px;
+            background-color: #eee;
+            padding-bottom: 5px;
+            &:before {
+                height: 38px;
+                display: block;
+                font-size: 48px;
+                content: "\"";
+                font-style: italic;
+            }
             p {
-                background-color: #eee;
-                &:before {
-                    display: inline;
-                    font-size: 48px;
-                    content: "\"";
-                    font-style: italic;
-                }
+                margin-top: 0;
+                margin-bottom: 0;
             }
         }
     }
