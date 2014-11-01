@@ -1,6 +1,14 @@
+if (typeof String.prototype.trim != 'function') { // detect native implementation
+  String.prototype.trim = function () {
+    return this.replace(/^\s+/, '').replace(/\s+$/, '');
+  };
+}
+
 var parseTags = function(tagsString) {
     var split = tagsString.toLowerCase().split(',');
-    return split.filter(function(val) {
+    return split.map(function(val) {
+        return val.trim();
+    }).filter(function(val) {
         return val.length > 1;
     });
 };
@@ -51,18 +59,11 @@ var cleanupSubmit = function(t) {
         node.value = '';
     };
 
-    [
-        t.find('#note-title'),
-        t.find('#note-tags'),
-        t.find('#note-content')
-    ].forEach(clean);
+    [t.find('#note-title'),
+     t.find('#note-tags'),
+     t.find('#note-content')].forEach(clean);
 
-    [
-        "content",
-        "title",
-        "tags",
-        "editingNote"
-    ].forEach(function (key) {
+    ["content", "title", "tags", "editingNote"].forEach(function (key) {
         Session.set(key, "");
     });
 };
