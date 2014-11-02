@@ -22,10 +22,11 @@ Template.note.events({
     }
 });
 
-Template.note.updatingNote = function () {
-    return Session.equals('editingNote', this._id);
-};
-
-Template.note.selectedNote = function () {
-    return Notes.findOne({_id: Session.get('selectedNote')});
-};
+Template.note.helpers({
+    updatingNote: function () {
+        return Session.equals('editingNote', this._id);
+    },
+    selectedNote: function () {
+        return Notes.findOne({_id: Session.get('selectedNote')});
+    }
+});

@@ -1,4 +1,4 @@
-if (typeof String.prototype.trim != 'function') { // detect native implementation
+if (typeof String.prototype.trim !== 'function') { // detect native implementation
   String.prototype.trim = function () {
     return this.replace(/^\s+/, '').replace(/\s+$/, '');
   };
@@ -117,14 +117,16 @@ Template.editor.events({
     'keyup #note-tags': updatePreviewNote(),
 });
 
-Template.editor.newNoteMode = function() {
-    return Session.equals('noteMode', 'new');
-};
+Template.editor.helpers({
+    "newNoteMode": function() {
+        return Session.equals('noteMode', 'new');
+    },
 
-Template.editor.updateNoteMode = function() {
-    return Session.equals('noteMode', 'update');
-};
+    "updateNoteMode": function() {
+        return Session.equals('noteMode', 'update');
+    },
 
-Template.editor.notify = function() {
-    return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
-};
+    "notify": function() {
+        return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
+    }
+});

@@ -1,3 +1,5 @@
-Template.notes.notes = function () {
-    return Notes.find({}, {sort: {"date_created": -1}});
-};
+Template.notes.helpers({
+    "notes": function () {
+        return Notes.find({}, {sort: {"date_created": -1}});
+    }
+});
