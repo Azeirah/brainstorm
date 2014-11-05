@@ -1,0 +1,9 @@
+<template name="boardNavigation">
+    <ul class="boardNavigation">
+        {{#each boards}}
+            <li>
+                <a href="/board/{{this.name}}">{{this.name}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</template>

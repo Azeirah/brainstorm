@@ -1,5 +1,5 @@
 Template.notes.helpers({
-    "notes": function () {
-        return Notes.find({}, {sort: {"date_created": -1}});
+    "notes": function (board) {
+        return Notes.find({"board": board}, {sort: {"date_created": -1}});
     }
 });

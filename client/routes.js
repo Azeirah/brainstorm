@@ -26,4 +26,15 @@ Router.map(function () {
             }
         }
     });
+
+    this.route('board', {
+        path: '/board/:board',
+        template: 'board',
+        layoutTemplate: 'container',
+        data: function () {
+            return {
+                name: this.params.board
+            }
+        }
+    });
 });

@@ -1,11 +1,11 @@
-<template name="container">
-  <head>
-    <title>plannificater</title>
-  </head>
+<head>
+  <title>Brainstorm</title>
+</head>
 
-  <body>
-    <div class="notes">
-      {{> yield}}
-    </div>
-  </body>
+<template name="container">
+  {{> boardNavigation}}
+
+  <div class="notes">
+    {{> yield}}
+  </div>
 </template>
