@@ -1,5 +1,6 @@
 Template.notes.helpers({
     "notes": function (board) {
-        return Notes.find({"board": board}, {sort: {"date_created": -1}});
+        var boardId = Boards.findOne({name: board})._id;
+        return Notes.find({"board_id": boardId}, {sort: {"date_created": -1}});
     }
 });

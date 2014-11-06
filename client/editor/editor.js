@@ -23,7 +23,7 @@ var createNoteObject = function(template) {
         "tags": parseTags(tags),
         "content": content,
         "date_created": new Date().getTime(),
-        "board": getCurrentBoard()
+        "board_id": getCurrentBoardId()
     };
 };
 
@@ -96,7 +96,6 @@ Template.editor.events({
         inputValidationFeedback(t);
         if (validateNote(note)) {
             submitTags(note.tags);
-            console.log(note);
             Notes.insert(note);
             cleanupSubmit(t);
         }

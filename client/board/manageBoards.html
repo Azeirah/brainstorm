@@ -1,0 +1,22 @@
+<template name="manageBoards">
+    {{#each boards}}
+        {{#unless is "Home" this.name}}
+        <div class="note">
+            <div class="middleNote">
+                <h1 class="title">{{this.name}}</h1>
+            </div>
+            <hr>
+            <div class="bottomNote">
+                <div class="note-content">
+                {{#autoForm collection="Boards" id=this._id type="update"}}
+                    <h4>Change the board's name</h4>
+                    {{>afQuickField name='name'}}
+                {{/autoForm}}
+                <h4>Or to delete the board</h4>
+                {{> quickRemoveButton collection="Boards" _id=this._id}}
+                </div>
+            </div>
+        </div>
+        {{/unless}}
+    {{/each}}
+</template>

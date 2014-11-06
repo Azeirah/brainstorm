@@ -1,9 +1,13 @@
-var currentBoard;
+var currentBoardName = "Home";
 
-getCurrentBoard = function () {
-    return currentBoard ? currentBoard : "Home";
+getCurrentBoardId = function () {
+    return Boards.findOne({name: currentBoardName})._id;
 };
 
-Template.board.rendered = function () {
-    currentBoard = Template.instance().data.board;
+setCurrentBoardName = function (name) {
+    currentBoardName = name;
 };
+
+UI.registerHelper('getCurrentBoardname', function () {
+    return currentBoardName;
+});

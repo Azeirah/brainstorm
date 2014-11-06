@@ -1,8 +1,13 @@
 Router.map(function () {
     this.route('home', {
         path: '/',
-        template: 'home',
-        layoutTemplate: 'container'
+        template: 'board',
+        layoutTemplate: 'container',
+        data: function () {
+            return {
+                name: "Home"
+            }
+        }
     });
 
     this.route('tag', {
@@ -32,9 +37,15 @@ Router.map(function () {
         template: 'board',
         layoutTemplate: 'container',
         data: function () {
+            setCurrentBoardName(this.params.board);
             return {
                 name: this.params.board
             }
         }
+    });
+
+    this.route('manageBoards', {
+        template: 'manageBoards',
+        layoutTemplate: 'container'
     });
 });

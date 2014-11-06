@@ -2,13 +2,13 @@
     <ul class="boardNavigation">
         {{#each boards}}
             <li>
-                <a href="/board/{{this.name}}">{{this.name}}</a>
+                <span class="boardReference selected-{{is getCurrentBoardname this.name}}">
+                    <a href="/board/{{this.name}}">{{this.name}}</a>
+                </span>
             </li>
         {{/each}}
         <li>
-        <form id="newBoard">
-            <input type="text" id="boardName" placeholder="add a new board">
-        </form>
+            <a class="manageBoards" href="/manageBoards">Manage boards</a>
         </li>
     </ul>
 </template>

@@ -1,5 +1,7 @@
 accounts-base@1.1.2
+aldeed:autoform@3.2.0
 aldeed:collection2@2.2.0
+aldeed:delete-button@1.0.0
 aldeed:simple-schema@1.0.3
 application-configuration@1.0.3
 autopublish@1.0.1
@@ -49,6 +51,7 @@ minimongo@1.0.5
 mobile-status-bar@1.0.1
 mongo-livedata@1.0.6
 mongo@1.0.8
+mrt:moment@2.6.0
 natestrauser:font-awesome@4.2.0
 observe-sequence@1.0.3
 ordered-dict@1.0.1
