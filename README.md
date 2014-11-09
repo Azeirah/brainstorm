@@ -22,7 +22,7 @@ Features
 Currently working on:
 ---
 
-Most importantly is, when going public with this application, that notes can be secured. In the coming time, I'll be working on security and privacy.
+I'm currently working on adding support for boards. Quite a lot of work has been done so far.
 
 Cool project, how can I contribute?
 ---
