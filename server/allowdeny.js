@@ -4,8 +4,12 @@ Notes.deny({
   }
 });
 
-Notes.allow({
-  insert: function (userId, doc) {
-    return (doc.title && doc.tags && doc.content && doc.date_created);
-  }
+var denyHome = function (userId, doc) {
+    return doc.name === "Home";
+};
+
+Boards.deny({
+    insert: denyHome,
+    update: denyHome,
+    remove: denyHome
 });
