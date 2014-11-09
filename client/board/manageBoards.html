@@ -1,19 +1,35 @@
 <template name="manageBoards">
+    <div class="note">
+        <div class="middleNote">
+            <h1 class="title">Add a board</h1>
+        </div>
+        <hr>
+        <div class="bottomNote">
+                <div class="note-content">
+                    <h4>Add a new board by typing in a name and then pressing submit</h4>
+                    {{#autoForm collection="Boards" type="insert"}}
+                        {{> afQuickField name="name"}}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    {{/autoForm}}
+                </div>
+        </div>
+    </div>
     {{#each boards}}
-        {{#unless is "Home" this.name}}
+        {{#unless is "Home" name}}
         <div class="note">
             <div class="middleNote">
-                <h1 class="title">{{this.name}}</h1>
+                <h1 class="title">{{name}}</h1>
             </div>
             <hr>
             <div class="bottomNote">
                 <div class="note-content">
-                {{#autoForm collection="Boards" id=this._id type="update"}}
-                    <h4>Change the board's name</h4>
-                    {{>afQuickField name='name'}}
+                <h4>Change <code>{{name}}</code>'s name</h4>{{_id}}
+                {{#autoForm collection="Boards" doc=this id=_id type="update"}}
+                    {{> afQuickField name="name"}}
+                    <button type="submit">Change</button>
                 {{/autoForm}}
-                <h4>Or to delete the board, press the magic button</h4>
-                {{> quickRemoveButton collection="Boards" _id=this._id}}
+                <h4>Or to delete <code>{{name}}</code>, press the magic button</h4>
+                {{> quickRemoveButton collection="Boards" _id=_id}}
                 </div>
             </div>
         </div>
