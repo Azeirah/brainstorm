@@ -29,7 +29,7 @@
                     <button type="submit">Change</button>
                 {{/autoForm}}
                 <h4>Or to delete <code>{{name}}</code>, press the magic button</h4>
-                {{> quickRemoveButton collection="Boards" _id=_id}}
+                {{> quickRemoveButton collection="Boards" _id=_id beforeRemove=confirmBoardRemoval}}
                 </div>
             </div>
         </div>
