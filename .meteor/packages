@@ -1,0 +1,31 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+iron:location
+aldeed:autoform
+aldeed:collection2
+aldeed:delete-button
+accounts-base
+less
+iron:dynamic-template
+iron:router
+chuangbo:cookie
+natestrauser:font-awesome
+iron:layout
+standard-app-packages
+iron:middleware-stack
+iron:url
+azeirah:marked
+service-configuration
+mrt:moment
+aldeed:simple-schema
+iron:controller
+mongo-livedata
+localstorage
+iron:core
+meteorhacks:fast-render
