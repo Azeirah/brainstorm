@@ -1,0 +1,11 @@
+<template name="navigation">
+    <ul class="navigation">
+        {{#each links}}
+            <li>
+                <span class="link selected-{{is getPage this.name}}">
+                    <a href="{{this.url}}">{{this.name}}</a>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+</template>

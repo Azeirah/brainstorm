@@ -1,3 +1,17 @@
+var currentPage = "Home";
+
+setPage = function (name) {
+    currentPage = name;
+};
+
+getPage = function () {
+    return currentPage;
+};
+
+UI.registerHelper('getPage', function () {
+    return getPage();
+});
+
 Router.map(function () {
     this.route('home', {
         path: '/',
@@ -37,7 +51,7 @@ Router.map(function () {
         template: 'board',
         layoutTemplate: 'container',
         data: function () {
-            setCurrentBoardName(this.params.board);
+            setPage(this.params.board);
             return {
                 name: this.params.board
             }
@@ -45,6 +59,10 @@ Router.map(function () {
     });
 
     this.route('manageBoards', {
+        onBeforeAction: function () {
+            setPage("Manage boards");
+            this.next();
+        },
         template: 'manageBoards',
         layoutTemplate: 'container'
     });

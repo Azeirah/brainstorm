@@ -23,7 +23,7 @@
             <hr>
             <div class="bottomNote">
                 <div class="note-content">
-                <h4>Change <code>{{name}}</code>'s name</h4>{{_id}}
+                <h4>Change <code>{{name}}</code>'s name</h4>
                 {{#autoForm collection="Boards" doc=this id=_id type="update"}}
                     {{> afQuickField name="name"}}
                     <button type="submit">Change</button>
