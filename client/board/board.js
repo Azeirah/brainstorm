@@ -1,11 +1,5 @@
-var currentBoardName = "Home";
-
 getCurrentBoardId = function () {
-    return Boards.findOne({name: currentBoardName})._id;
-};
-
-setCurrentBoardName = function (name) {
-    currentBoardName = name;
+    return Boards.findOne({name: Template.currentData().name})._id;
 };
 
 UI.registerHelper('getCurrentBoardname', function () {
