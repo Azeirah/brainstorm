@@ -3,15 +3,29 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
+meteor-platform
 autopublish
 insecure
-aldeed:collection2
-less
-natestrauser:font-awesome@4.1.0
-iron:router
-meteorhacks:fast-render
-azeirah:marked
+iron:location
 aldeed:autoform
+aldeed:collection2
 aldeed:delete-button
-
+accounts-base
+less
+iron:dynamic-template
+iron:router
+chuangbo:cookie
+natestrauser:font-awesome
+iron:layout
+standard-app-packages
+iron:middleware-stack
+iron:url
+azeirah:marked
+service-configuration
+mrt:moment
+aldeed:simple-schema
+iron:controller
+mongo-livedata
+localstorage
+iron:core
+meteorhacks:fast-render

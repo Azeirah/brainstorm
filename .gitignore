@@ -1,6 +1,10 @@
 .meteor/local
 .meteor/meteorite
+<<<<<<< HEAD
 packages/
+=======
+/packages
+>>>>>>> master
 mup.json
 settings.json
 *.sublime-workspace
