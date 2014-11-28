@@ -14,15 +14,16 @@ var parseTags = function(tagsString) {
 };
 
 var createNoteObject = function(template) {
-    var title = template.find('#note-title').value || "";
-    var tags = template.find('#note-tags').value || "";
+    var title   = template.find('#note-title')  .value || "";
+    var tags    = template.find('#note-tags')   .value || "";
     var content = template.find('#note-content').value || "";
 
     return {
         "title": title,
         "tags": parseTags(tags),
         "content": content,
-        "date_created": new Date().getTime()
+        "date_created": new Date().getTime(),
+        "board_id": getCurrentBoardId()
     };
 };
 
@@ -82,9 +83,9 @@ Template.editor.rendered = function() {
     var that = this;
     this.autorun(function() {
         if (Session.get('editingNote')) {
-            that.find('#note-tags').value = Session.get('tags');
+            that.find('#note-tags')   .value = Session.get('tags');
             that.find('#note-content').value = Session.get('content');
-            that.find('#note-title').value = Session.get('title');
+            that.find('#note-title')  .value = Session.get('title');
         }
     });
 };

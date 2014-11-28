@@ -1,15 +1,5 @@
 <template name="notes">
-<!--  u <div class="top">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-default">
-          <input type="radio" name="selection"> Tags
-        </label>
-        <label class="btn btn-default">
-          <input type="radio" name="selection"> Notes
-        </label>
-      </div>
-  </div> -->
-  {{#each notes}}
+  {{#each notes boardId}}
     {{> note}}
   {{/each}}
 </template>
