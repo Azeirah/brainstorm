@@ -1,7 +1,8 @@
-if (typeof String.prototype.trim !== 'function') { // detect native implementation
-  String.prototype.trim = function () {
-    return this.replace(/^\s+/, '').replace(/\s+$/, '');
-  };
+if ( typeof String.prototype.trim !== 'function' ) {
+    // detect native implementation
+    String.prototype.trim = function () {
+        return this.replace(/^\s+/, '').replace(/\s+$/, '');
+    };
 }
 
 var parseTags = function(tagsString) {
@@ -20,7 +21,7 @@ var createNoteObject = function(template) {
     // create an object that is to be inserted into the database, it's created from a template
     return {
         "title": template.find('#note-title').value || "",
-        "tags": parseTags(template.find('#note-tags').value || ""),
+        "tags": parseTags( template.find('#note-tags').value || "" ),
         "content": template.find('#note-content').value || "",
         "date_created": new Date().getTime(),
         "board_id": Session.get("boardId")
@@ -36,12 +37,12 @@ var updatePreviewNote = function() {
     return _.debounce(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
-        Object.keys(note).forEach(function(what) {
-            Session.set(what, note[what]);
+        ["title", "tags", "content"].forEach(function (key) {
+            Session.set( key, note[key] );
         });
         // This is a bit of a hack, Session.get("previewNoteUpdated") will only update when the value changes
         // what I really wanted to do here is send a signal, I don't want to preserve data, so I'm actually abusing the Session.
-        Session.set("previewNoteUpdated", Math.random());
+        Session.set( "previewNoteUpdated", Math.random() );
     }, 350);
 };
 
@@ -103,12 +104,9 @@ Template.editor.events({
         inputValidationFeedback(t);
         if ( validateNote(note) ) {
             submitTags(note.tags);
-            Notes.update({
-                _id: Session.get('editingNote')
-            }, {
-                $set: note
-            });
+            Notes.update( {_id: Session.get('editingNote')}, {$set: note} );
             cleanupSubmit(t);
+            Session.set("noteMode", "new");
         }
     },
     'keyup textarea':    updatePreviewNote(),
@@ -118,14 +116,14 @@ Template.editor.events({
 
 Template.editor.helpers({
     "newNoteMode": function() {
-        return Session.equals('noteMode', 'new');
+        return Session.equals( 'noteMode', 'new' );
     },
 
     "updateNoteMode": function() {
-        return Session.equals('noteMode', 'update');
+        return Session.equals( 'noteMode', 'update' );
     },
 
     "notify": function() {
-        return Session.equals("newNoteNotify", true) ? "animated bounce" : "";
+        return Session.equals( "newNoteNotify", true ) ? "animated bounce" : "";
     }
 });
