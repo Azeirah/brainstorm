@@ -1,7 +1,7 @@
 Brainstorm
 ===
 
-Brainstorm is a note-taking application made with love and a my childhood dreams.
+Brainstorm is a note-taking application made with love and my childhood dreams.
 
 ## [DEMO](http://brainstorm-notes.meteor.com)
 
