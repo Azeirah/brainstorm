@@ -39,6 +39,8 @@ var updatePreviewNote = function() {
         Object.keys(note).forEach(function(what) {
             Session.set(what, note[what]);
         });
+        // This is a bit of a hack, Session.get("previewNoteUpdated") will only update when the value changes
+        // what I really wanted to do here is send a signal, I don't want to preserve data, so I'm actually abusing the Session.
         Session.set("previewNoteUpdated", Math.random());
     }, 350);
 };
@@ -60,9 +62,7 @@ var cleanupSubmit = function(t) {
         node.value = '';
     };
 
-    [t.find('#note-title'),
-     t.find('#note-tags'),
-     t.find('#note-content')].forEach(clean);
+    [t.find('#note-title'), t.find('#note-tags'), t.find('#note-content')].forEach(clean);
 
     ["content", "title", "tags", "editingNote"].forEach(function (key) {
         Session.set(key, "");
@@ -70,12 +70,10 @@ var cleanupSubmit = function(t) {
 };
 
 var submitTags = function(tags) {
-    _.each(tags, function(tag) {
-        if (!Tags.findOne({
-            name: tag
-        })) Tags.insert({
-            name: tag
-        });
+    tags.forEach(function (tag) {
+        if ( !Tags.findOne({name: tag}) ) {
+            Tags.insert({name: tag});
+        }
     });
 };
 
@@ -113,9 +111,9 @@ Template.editor.events({
             cleanupSubmit(t);
         }
     },
-    'keyup textarea': updatePreviewNote(),
+    'keyup textarea':    updatePreviewNote(),
     'keyup #note-title': updatePreviewNote(),
-    'keyup #note-tags': updatePreviewNote(),
+    'keyup #note-tags':  updatePreviewNote(),
 });
 
 Template.editor.helpers({

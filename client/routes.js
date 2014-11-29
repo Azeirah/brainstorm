@@ -8,9 +8,7 @@ getPage = function () {
     return currentPage;
 };
 
-UI.registerHelper('getPage', function () {
-    return getPage();
-});
+UI.registerHelper('getPage', getPage);
 
 Router.map(function () {
     this.route('home', {
