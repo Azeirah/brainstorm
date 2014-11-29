@@ -12,13 +12,9 @@ Features
   * Live preview of what you're writing
   * Supports Github Flavored markdown
   * Syntax highlighting for all languages highlight.js supports ([see support here](https://highlightjs.org/static/test.html))
-* Editing notes
-* Deleting notes
-* Grid-based note viewing
-* Isolating groups of notes by tag-name
-* Works on different screen sizes
-* Sharing separate notes
-* Boards, you can create your own boards to organize your notes with.
+* Viewing all notes with the same tag by clicking on a tag name
+* Sharing a single note by clicking on the title of a note
+* You can create your own boards to organize your notes with, I've got notes, school, JavaScript, rambling, Brainstorm, C, links and Good Stuff.
 
 Need help setting it up?
 ---
