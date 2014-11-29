@@ -1,5 +1,5 @@
-UI.registerHelper('session', function(input) {
-    return Session.get(input);
+UI.registerHelper('session', function(key) {
+    return Session.get(key);
 });
 
 UI.registerHelper('is', function (value1, value2) {

@@ -1,18 +1,18 @@
 <template name="previewNote">
-{{#if content}}
-<div class="note preview">
-    <h2 class="previewTitle">Preview</h2>
-    <hr>
-    <div class="middleNote">
-        <h1 class="previewNoteTitle">{{title}}</h1>
-        <p class='note-content'>{{#markdown}}{{content}}{{/markdown}}</p>
+    {{#if session "content"}}
+    <div class="note preview">
+        <h2 class="previewTitle">Preview</h2>
+        <hr>
+        <div class="middleNote">
+            <h1 class="previewNoteTitle">{{session "title"}}</h1>
+            <p class='note-content'>{{#markdown}}{{session "content"}}{{/markdown}}</p>
+        </div>
+        <hr>
+        <ul class="tags bottomNote">
+            {{#each session "tags"}}
+                <li class="tag"><a>{{this}}</a></li>
+            {{/each}}
+        </ul>
     </div>
-    <hr>
-    <ul class="tags bottomNote">
-        {{#each tags}}
-            <li class="tag"><a>{{this}}</a></li>
-        {{/each}}
-    </ul>
-</div>
-{{/if}}
+    {{/if}}
 </template>

@@ -24,9 +24,9 @@ Template.note.events({
 
 Template.note.helpers({
     updatingNote: function () {
-        return Session.equals('editingNote', this._id);
+        return Session.equals( 'editingNote', this._id );
     },
     selectedNote: function () {
-        return Notes.findOne({_id: Session.get('selectedNote')});
+        return Notes.findOne( {_id: Session.get('selectedNote')} );
     }
 });
