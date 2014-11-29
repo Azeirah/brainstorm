@@ -2,6 +2,7 @@ var currentPage = "Home";
 
 setPage = function (name) {
     currentPage = name;
+    Session.set( "boardId", Boards.findOne({"name": currentPage})._id );
 };
 
 getPage = function () {

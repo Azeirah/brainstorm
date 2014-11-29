@@ -5,6 +5,9 @@ if (typeof String.prototype.trim !== 'function') { // detect native implementati
 }
 
 var parseTags = function(tagsString) {
+    // all tags will be lowercase, spaces in the front and at the end will be removed, tags that are shorter than 2 characters
+    // will be removed.
+    // ["  JavaScript   ", " hiThere", "spaces are allowed"] => ["javascript", "hithere", "spaces are allowed"]
     var split = tagsString.toLowerCase().split(',');
     return split.map(function(val) {
         return val.trim();
@@ -14,16 +17,13 @@ var parseTags = function(tagsString) {
 };
 
 var createNoteObject = function(template) {
-    var title   = template.find('#note-title')  .value || "";
-    var tags    = template.find('#note-tags')   .value || "";
-    var content = template.find('#note-content').value || "";
-
+    // create an object that is to be inserted into the database, it's created from a template
     return {
-        "title": title,
-        "tags": parseTags(tags),
-        "content": content,
+        "title": template.find('#note-title').value || "",
+        "tags": parseTags(template.find('#note-tags').value || ""),
+        "content": template.find('#note-content').value || "",
         "date_created": new Date().getTime(),
-        "board_id": getCurrentBoardId()
+        "board_id": Session.get("boardId")
     };
 };
 
@@ -47,7 +47,7 @@ var updatePreviewNote = function() {
 
 var inputValidationFeedback = function(t) {
     var validateNode = function(node) {
-        if (!node.value) {
+        if ( !node.value ) {
             $(node).addClass('required');
         } else {
             $(node).removeClass('required');
@@ -80,7 +80,7 @@ var submitTags = function(tags) {
 Template.editor.rendered = function() {
     var that = this;
     this.autorun(function() {
-        if (Session.get('editingNote')) {
+        if ( Session.get('editingNote') ) {
             that.find('#note-tags')   .value = Session.get('tags');
             that.find('#note-content').value = Session.get('content');
             that.find('#note-title')  .value = Session.get('title');
@@ -92,7 +92,7 @@ Template.editor.events({
     'click #newNoteBtn': function(event, t) {
         var note = createNoteObject(t);
         inputValidationFeedback(t);
-        if (validateNote(note)) {
+        if ( validateNote(note) ) {
             submitTags(note.tags);
             Notes.insert(note);
             cleanupSubmit(t);
@@ -101,7 +101,7 @@ Template.editor.events({
     'click #updateNoteBtn': function(event, t) {
         var note = createNoteObject(t);
         inputValidationFeedback(t);
-        if (validateNote(note)) {
+        if ( validateNote(note) ) {
             submitTags(note.tags);
             Notes.update({
                 _id: Session.get('editingNote')

@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-    if (Boards.findOne({name: "Home"}) === undefined) {
+    if ( Boards.findOne({name: "Home"}) === undefined ) {
         Boards.insert({name: "Home"});
     }
 });

@@ -16,7 +16,7 @@ Template.note.events({
         }, 20);
     },
     'click .deleteNote': function (event, t) {
-        if (window.confirm("Are you sure you want to delete this note?")) {
+        if ( window.confirm("Are you sure you want to delete this note?") ) {
             Notes.remove(this._id);
         }
     }
