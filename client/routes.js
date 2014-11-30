@@ -17,12 +17,8 @@ UI.registerHelper('getPage', getPage);
 Router.map(function () {
     this.route('home', {
         path: '/',
-        template: 'board',
-        layoutTemplate: 'container',
         data: function () {
-            return {
-                name: "Home"
-            }
+            Router.go("/board/Home");
         }
     });
 
