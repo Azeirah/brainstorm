@@ -19,13 +19,13 @@ Features
 Need help setting it up?
 ---
 
-I see it in your eyes, you tried it, and instantly fell in love. Now you're wondering, **how do I host my own?**
+I see it in your eyes, you tried it, and instantly, you fell in love. I hear you wondering, **how do I host my own?**
 
 At the moment, it takes a little time to set it up. You can choose to run it locally, or you can choose to run it on a server.
 
-## Local Brainstorm
+### Local Brainstorm
 
-Brainstorm only runs on Linux and Apple OSX, it's possible to set it up on Windows, but I honestly have no idea how ;(.
+Brainstorm only runs on Linux and Apple OSX, it's possible to set it up on Windows, but honestly, I have no idea how ;(
 
 First, you need to install meteor, run `curl https://install.meteor.com/ | sh` in your favorite terminal.
 Then, you'll need to download Brainstorm (check out the [releases](https://github.com/Azeirah/brainstorm/releases), or clone Brainstorm with git)
@@ -59,13 +59,12 @@ Todo features
 Goal
 ---
 
-A solid note-taking application which can be used for several different tasks:
+Building a solid note-taking application which can be used for several different tasks:
 
 1. Note taking
 2. Planning
 3. Cheat sheets
 4. Free-writing
-5. Microblogging
 
 Honestly, I use this to dump my thoughts, write little notes about what happened today, sketch out how I'm going to tackle my next little project,collect quotes, save snippets of code, write down homework exercises and scribble down notes during class, share links with friends as well as let friends share links with me, write meaningless little stories, and type to the rhythm of my favorite songs.
 
@@ -73,3 +72,5 @@ Contact
 ---
 
 I don't get many emails, but I do love email, so please send me any email @ tijntje_7@msn.com
+
+-- Brainstorm was written and developed by Martijn Brekelmans
