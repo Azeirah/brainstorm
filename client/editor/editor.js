@@ -20,11 +20,11 @@ var parseTags = function(tagsString) {
 var createNoteObject = function(template) {
     // create an object that is to be inserted into the database, it's created from a template
     return {
-        "title": template.find('#note-title').value || "",
-        "tags": parseTags( template.find('#note-tags').value || "" ),
-        "content": template.find('#note-content').value || "",
+        "title":        template.find('#note-title').value || "",
+        "tags":         parseTags( template.find('#note-tags').value || "" ),
+        "content":      template.find('#note-content').value || "",
         "date_created": new Date().getTime(),
-        "board_id": Session.get("boardId")
+        "board_id":     Session.get("boardId")
     };
 };
 
@@ -34,7 +34,7 @@ var validateNote = function(note) {
 
 var updatePreviewNote = function() {
     var that = this;
-    return _.debounce(function(event, t) {
+    return function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
         ["title", "tags", "content"].forEach(function (key) {
@@ -43,7 +43,7 @@ var updatePreviewNote = function() {
         // This is a bit of a hack, Session.get("previewNoteUpdated") will only update when the value changes
         // what I really wanted to do here is send a signal, I don't want to preserve data, so I'm actually abusing the Session.
         Session.set( "previewNoteUpdated", Math.random() );
-    }, 350);
+    };
 };
 
 var inputValidationFeedback = function(t) {
