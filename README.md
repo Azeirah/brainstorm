@@ -3,9 +3,9 @@ Brainstorm
 
 Brainstorm is a note-taking application made with love and my childhood dreams.
 
-[![Foo](https://raw.githubusercontent.com/Azeirah/brainstorm/master/Brainstorm-preview.png)](http://brainstorm-notes.meteor.com)
+## [Demo](http://brainstorm-notes.meteor.com)
 
-## [DEMO](http://brainstorm-notes.meteor.com)
+[![Demo](https://raw.githubusercontent.com/Azeirah/brainstorm/master/Brainstorm-preview.png)](http://brainstorm-notes.meteor.com)
 
 Features
 ---
