@@ -2,16 +2,14 @@
     <div class="note">
         <div class="middleNote">
             <h1 class="title">Add a board</h1>
-        </div>
-        <hr>
-        <div class="bottomNote">
-                <div class="note-content">
-                    <h4>Add a new board by typing in a name and then pressing submit</h4>
-                    {{#autoForm collection="Boards" type="insert"}}
-                        {{> afQuickField name="name"}}
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    {{/autoForm}}
-                </div>
+            <hr>
+            <div class="note-content">
+                <h4>Add a new board by typing in a name and then pressing submit</h4>
+                {{#autoForm collection="Boards" type="insert"}}
+                    {{> afQuickField name="name"}}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {{/autoForm}}
+            </div>
         </div>
     </div>
     {{#each boards}}
@@ -19,17 +17,15 @@
         <div class="note">
             <div class="middleNote">
                 <h1 class="title">{{name}}</h1>
-            </div>
-            <hr>
-            <div class="bottomNote">
+                <hr>
                 <div class="note-content">
-                <h4>Change <code>{{name}}</code>'s name</h4>
-                {{#autoForm collection="Boards" doc=this id=_id type="update"}}
-                    {{> afQuickField name="name"}}
-                    <button type="submit">Change</button>
-                {{/autoForm}}
-                <h4>Or to delete <code>{{name}}</code>, press the magic button</h4>
-                {{> quickRemoveButton collection="Boards" _id=_id beforeRemove=confirmBoardRemoval}}
+                    <h4>Change <code>{{name}}</code>'s name</h4>
+                    {{#autoForm collection="Boards" doc=this id=_id type="update"}}
+                        {{> afQuickField name="name"}}
+                        <button type="submit">Change</button>
+                    {{/autoForm}}
+                    <h4>Or to delete <code>{{name}}</code>, press the magic button</h4>
+                    {{> quickRemoveButton collection="Boards" _id=_id beforeRemove=confirmBoardRemoval}}
                 </div>
             </div>
         </div>
