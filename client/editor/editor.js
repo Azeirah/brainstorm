@@ -34,7 +34,7 @@ var validateNote = function(note) {
 
 var updatePreviewNote = function() {
     var that = this;
-    return function(event, t) {
+    return _.throttle(function(event, t) {
         t = t || that;
         var note = createNoteObject(t);
         ["title", "tags", "content"].forEach(function (key) {
@@ -43,7 +43,7 @@ var updatePreviewNote = function() {
         // This is a bit of a hack, Session.get("previewNoteUpdated") will only update when the value changes
         // what I really wanted to do here is send a signal, I don't want to preserve data, so I'm actually abusing the Session.
         Session.set( "previewNoteUpdated", Math.random() );
-    };
+    }, 70);
 };
 
 var inputValidationFeedback = function(t) {
