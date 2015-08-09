@@ -1,5 +1,9 @@
 <head>
   <title>Brainstorm</title>
+  <script>
+    /* On Sandstorm, synchronize URL with Sandstorm address bar */
+    window.parent.postMessage({'setPath': location.pathname + location.hash}, '*');
+  </script>
 </head>
 
 <template name="container">
