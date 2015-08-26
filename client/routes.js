@@ -64,4 +64,13 @@ Router.map(function () {
         template: 'manageBoards',
         layoutTemplate: 'container'
     });
+
+    // inside the sandstorm environment, the link gets destroyed on refresh
+    // this snippet makes sure that you stay on the same page after a refresh.
+    Tracker.autorun(function () {
+        var path = Router.current();
+        Meteor.defer(function () {
+            window.parent.postMessage({'setPath': location.pathname + location.hash}, '*');
+        });
+    });
 });
