@@ -28,8 +28,8 @@ const pkgdef :Spk.PackageDefinition = (
     actions = [
       # Define your "new document" handlers here.
       ( title = (defaultText = "New Brainstorm instance"),
-        command = .myCommand
-        nounPhrase = (defaultText = "board")
+        command = .myCommand,
+        nounPhrase = (defaultText = "board"),
         # The command to run when starting for the first time. (".myCommand"
         # is just a constant defined at the bottom of the file.)
       )
@@ -55,8 +55,8 @@ const pkgdef :Spk.PackageDefinition = (
         upstreamAuthor = "Martijn Brekelmans"
       ),
       pgpKeyring = embed "pgp-keyring",
+      shortDescription = (defaultText = "notetaking"),
 
-      shortDescription = "Brainstorm is a multi-purpose note taking application which excels at free writing, prototyping thought and collecting related content."
       description = (defaultText = embed "description.md"),
 
       screenshots = [
