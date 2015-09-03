@@ -81,3 +81,4 @@ Contributors
 ---
 
 * Thanks to @neynah for the icons.
+* Thanks to @paulproteus for helping with the sandstorm.io integration
