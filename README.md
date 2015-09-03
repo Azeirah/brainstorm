@@ -76,3 +76,8 @@ Contact
 I don't get many emails, but I do love email, so please send me any email @ tijntje_7@msn.com
 
 -- Brainstorm was written and developed by Martijn Brekelmans
+
+Contributors
+---
+
+* Thanks to @neynah for the icons.
