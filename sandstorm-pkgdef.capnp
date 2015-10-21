@@ -44,8 +44,8 @@ const pkgdef :Spk.PackageDefinition = (
         market = (svg = embed "resources/brainstorm-150.svg")
       ),
 
-      website = "https://github.com/Azeirah/brainstorm.git",
-      codeUrl = "https://github.com/Azeirah/brainstorm.git",
+      website = "https://github.com/Azeirah/brainstorm",
+      codeUrl = "https://github.com/Azeirah/brainstorm",
       license = (openSource = gpl2),
       categories = [productivity],
 
