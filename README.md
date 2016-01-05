@@ -56,7 +56,7 @@ Todo features
 
 1. Widgets
 2. Accounts
-3. Privacy, so that nobody can remove or edit your notes without your permission, which is **totally not happening all the time at the [demo](brainstorm-notes.meteor.com)**
+3. Privacy, so that nobody can remove or edit your notes without your permission, which is **totally not happening all the time at the [demo](https://brainstorm-notes.meteor.com)**
 
 Goal
 ---
