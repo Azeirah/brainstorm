@@ -39,7 +39,7 @@ The easiest way to host a Brainstorm server *by far* is by running `meteor deplo
 
 I'm sorry that it's so inconvenient to host Brainstorm at this time, I'll make this easier in the future, I promise!
 
-Martijn, I need to know what you're currently working on!
+Laura, I need to know what you're currently working on!
 ---
 
 I'm currently working on improving boards, I do this for you as much as I do this for me
@@ -47,7 +47,7 @@ I'm currently working on improving boards, I do this for you as much as I do thi
 Cool project, how can I contribute?
 ---
 
-**All feedback is welcome**. Anyone can contribute to Brainstorm. If you enjoyed the demo or are already hosting your own brainstorm server, any kind of feedback you may have is very welcome. I love emails, so feel free to send me an email @ tijntje_7@msn.com
+**All feedback is welcome**. Anyone can contribute to Brainstorm. If you enjoyed the demo or are already hosting your own brainstorm server, any kind of feedback you may have is very welcome. I love emails, so feel free to send me an email @ mail@laura.fm
 
 If you find any bugs, please contact me or open up an issue.
 
@@ -68,14 +68,14 @@ Building a solid note-taking application which can be used for several different
 3. Cheat sheets
 4. Free-writing
 
-Honestly, I use this to dump my thoughts, write little notes about what happened today, sketch out how I'm going to tackle my next little project,collect quotes, save snippets of code, write down homework exercises and scribble down notes during class, share links with friends as well as let friends share links with me, write meaningless little stories, and type to the rhythm of my favorite songs.
+Honestly, I use this to dump my thoughts, write little notes about what happened today, sketch out how I'm going to tackle my next little project, collect quotes, save snippets of code, write down homework exercises and scribble down notes during class, share links with friends as well as let friends share links with me, write meaningless little stories, and type to the rhythm of my favorite songs.
 
 Contact
 ---
 
-I don't get many emails, but I do love email, so please send me any email @ tijntje_7@msn.com
+I don't get many emails, but I do love email, so please send me any email @ mail@laura.fm
 
--- Brainstorm was written and developed by Martijn Brekelmans
+-- Brainstorm was written and developed by Laura Brekelmans
 
 Contributors
 ---
